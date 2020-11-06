@@ -1,0 +1,13 @@
+server:
+  port: 8800
+spring:
+  application:
+      name: provider  # 用于指定注册到Eureka Server上的应用名称
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZooe: http://admin:admin@localhost:8761/eureka/
+  instance:
+    perfer-ip-address: true #将自己IP注册到Eureka Server
+
