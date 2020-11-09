@@ -1,3 +1,86 @@
 spring:
-  profiles:
-    active: single  # 多环境配置 加载application-single yml配置文件
+  #应用名称
+  application:
+    name: discovery-eureka
+  #用户认证
+  security:
+    user:
+      name: admin #配置对了的账户是admin
+      password: admin
+    basic:
+      enabled: true  #开启基于Http basic的认证
+
+---
+##集群配置1  启动方式: java -jar *.jar --spring.profiles.active=eureka_1
+spring:
+  #指定profile=eureka_1
+  profiles: eureka_1
+server:
+  port: 8761
+eureka:
+  instance:
+    # 指定当profile=eureka_1时，主机名是eureka_1
+    hostname: eureka_1
+    ip-address: 10.0.10.52
+  client:
+    # 是否将自己注册到Eureka Server，默认是true。由于当前应用就是Eureka Server，故设false
+    registerWithEureka: false
+    #表示是否从Eureka Server获取注册信息，默认是true。
+    fetchRegistry: true
+    serviceUrl:
+      #设置与Eureka Server交互的地址。多个地址可使用，分隔。这里将自己注册到eureka_2,eureka_3这个Eureka上面去
+      defaultZone: http://admin:admin@10.0.10.51:8761/eureka/,http://admin:admin@10.0.10.53:8761/eureka/
+  server:
+    #自我保护模式, 默认是允许开启的
+    enable-self-preservation: false
+
+---
+##集群配置2  启动方式: java -jar *.jar --spring.profiles.active=eureka_2
+spring:
+  #指定profile=eureka_2
+  profiles: eureka_2
+server:
+  port: 8761
+eureka:
+  instance:
+    # 指定当profile=eureka_2时，主机名是eureka_2
+    hostname: eureka_2
+    ip-address: 10.0.10.51
+  client:
+    # 是否将自己注册到Eureka Server，默认是true。由于当前应用就是Eureka Server，故设false
+    registerWithEureka: false
+    #表示是否从Eureka Server获取注册信息，默认是true。
+    fetchRegistry: true
+    serviceUrl:
+      #设置与Eureka Server交互的地址。多个地址可使用，分隔。这里将自己注册到eureka_1,eureka_3这个Eureka上面去
+      defaultZone: http://admin:admin@10.0.10.52:8761/eureka/,http://admin:admin@10.0.10.53:8761/eureka/
+  server:
+    #自我保护模式, 默认是允许开启的
+    enable-self-preservation: false
+
+---
+##集群配置3  启动方式: java -jar *.jar --spring.profiles.active=eureka_3
+spring:
+  #指定profile=eureka_3
+  profiles: eureka_3
+server:
+  port: 8761
+eureka:
+  instance:
+    # 指定当profile=eureka_3时，主机名是eureka_3
+    hostname: eureka_3
+    ip-address: 10.0.10.53
+  client:
+    # 是否将自己注册到Eureka Server，默认是true。由于当前应用就是Eureka Server，故设false
+    registerWithEureka: false
+    #表示是否从Eureka Server获取注册信息，默认是true。
+    fetchRegistry: true
+    serviceUrl:
+      #设置与Eureka Server交互的地址。多个地址可使用，分隔。这里将自己注册到eureka_1,eureka_2这个Eureka上面去
+      defaultZone: http://admin:admin@10.0.10.51:8761/eureka/,http://admin:admin@10.0.10.52:8761/eureka/
+  server:
+    #自我保护模式, 默认是允许开启的
+    enable-self-preservation: false
+
+
+
