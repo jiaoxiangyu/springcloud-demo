@@ -1,0 +1,13 @@
+server:
+  port: 8882
+spring:
+  application:
+      name: cunsumer  # 用于指定注册到Eureka Server上的应用名称
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://admin:admin@10.0.10.51:8761/eureka/,http://admin:admin@10.0.10.52:8761/eureka/,http://admin:admin@10.0.10.53:8761/eureka/
+  instance:
+    perfer-ip-address: true #将自己IP注册到Eureka Server
+

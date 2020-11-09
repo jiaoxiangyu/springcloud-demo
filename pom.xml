@@ -22,6 +22,8 @@
     <modules>
         <module>discovery-eureka</module>
         <module>provider</module>
+        <module>provider-copy</module>
+        <module>consumer</module>
     </modules>
 
     <dependencies>
