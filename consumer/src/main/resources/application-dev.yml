@@ -11,3 +11,7 @@ eureka:
   instance:
     perfer-ip-address: true #将自己IP注册到Eureka Server
 
+feign:
+  hystrix:
+    enabled: true #开启熔断器hystrix
+
