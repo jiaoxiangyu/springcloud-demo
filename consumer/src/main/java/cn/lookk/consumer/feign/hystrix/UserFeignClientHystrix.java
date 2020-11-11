@@ -2,6 +2,8 @@ package cn.lookk.consumer.feign.hystrix;
 
 import cn.lookk.consumer.feign.UserFeignClient;
 import cn.lookk.consumer.vo.UserInfo;
+import cn.lookk.handleexception.util.ResultUtil;
+import cn.lookk.handleexception.vo.Result;
 import org.springframework.stereotype.Component;
 
 /**
@@ -15,7 +17,12 @@ import org.springframework.stereotype.Component;
 @Component
 public class UserFeignClientHystrix implements UserFeignClient {
     @Override
-    public UserInfo findById(Long id) {
-        return null;
+    public Result findById(Long id) {
+        return ResultUtil.error(501, "无法访问");
+    }
+
+    @Override
+    public Result findByName(String name) {
+        return ResultUtil.error(501, "无法访问");
     }
 }

@@ -2,6 +2,7 @@ package cn.lookk.consumer.web;
 
 import cn.lookk.consumer.feign.UserFeignClient;
 import cn.lookk.consumer.vo.UserInfo;
+import cn.lookk.handleexception.vo.Result;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,11 +27,20 @@ public class UserInfoController {
     private UserFeignClient userFeignClient;
 
     @GetMapping("/{id}")
-    public UserInfo findById(@PathVariable Long id){
+    public Result findById(@PathVariable("id") Long id){
 
-        UserInfo user = userFeignClient.findById(id);
+        Result result = userFeignClient.findById(id);
 
-        logger.info("UserInfoController findById, id={}, user={}", id, user);
-        return user;
+        logger.info("UserInfoController findById, id={}, code={}", id, result.getCode());
+        return result;
+    }
+
+    @GetMapping("/name/{name}")
+    public Result findByName(@PathVariable("name") String name){
+
+        Result result = userFeignClient.findByName(name);
+
+        logger.info("UserInfoController findByName, name={}, code={}", name, result.getCode());
+        return result;
     }
 }
