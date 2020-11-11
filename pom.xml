@@ -24,7 +24,9 @@
         <module>provider</module>
         <module>provider-copy</module>
         <module>consumer</module>
+        <module>consumer-copy</module>
         <module>hystrix-dashboard</module>
+        <module>hystrix-turbine</module>
     </modules>
 
     <dependencies>

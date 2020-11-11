@@ -1,5 +1,5 @@
 server:
-  port: 8882
+  port: 8884
 spring:
   application:
       name: cunsumer  # 用于指定注册到Eureka Server上的应用名称
@@ -20,4 +20,3 @@ management:
     web:
       exposure:
         include: 'hystrix.stream' #暴露hystrix监控端点
-
