@@ -24,6 +24,7 @@
         <module>provider</module>
         <module>provider-copy</module>
         <module>consumer</module>
+        <module>hystrix-dashboard</module>
     </modules>
 
     <dependencies>
@@ -38,10 +39,12 @@
             <scope>test</scope>
         </dependency>
 
-       <!-- <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-security</artifactId>
-        </dependency>-->
+        <!--自定义统一异常工具-->
+        <dependency>
+            <groupId>cn.lookk</groupId>
+            <artifactId>handle-exception</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
 
         <!--junit-->
         <dependency>

@@ -1,5 +1,7 @@
 package cn.lookk.provider.web;
 
+import cn.lookk.handleexception.util.ResultUtil;
+import cn.lookk.handleexception.vo.Result;
 import cn.lookk.provider.vo.UserInfo;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -22,14 +24,24 @@ public class UserInfoController {
     private static final Logger logger = LoggerFactory.getLogger(UserInfoController.class);
 
     @GetMapping("/{id}")
-    public UserInfo findById(@PathVariable Long id){
-
+    public Result findById(@PathVariable Long id){
 
         UserInfo user = new UserInfo();
         user.setId(1L);
         user.setName("提供者-1");
 
         logger.info("UserInfoController findById, id={}, user={}", id, user);
-        return user;
+        return ResultUtil.success(user);
+    }
+
+    @GetMapping("/name/{name}")
+    public Result findByName(@PathVariable("name") String name){
+
+        UserInfo user = new UserInfo();
+        user.setId(11L);
+        user.setName(name);
+
+        logger.info("UserInfoController findByName, name={}, user={}", name, user);
+        return ResultUtil.success(user);
     }
 }
