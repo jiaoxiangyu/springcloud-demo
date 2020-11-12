@@ -1,9 +1,24 @@
 server:
   port: 8882
+
 spring:
   application:
       name: cunsumer  # 用于指定注册到Eureka Server上的应用名称
 
+  #配置中心
+  cloud:
+    config:
+      label: master #配置仓库的分支
+      profile: dev #配置文件后缀
+      discovery:
+        enabled: true #从配置中心读取文件
+        serviceId: config-server #配置中心的serviceId，即服务名
+      name: application
+      username: admin
+      password: admin
+
+
+#注册中心
 eureka:
   client:
     serviceUrl:
@@ -11,13 +26,18 @@ eureka:
   instance:
     perfer-ip-address: true #将自己IP注册到Eureka Server
 
+#远程调用
 feign:
   hystrix:
     enabled: true #开启熔断器hystrix
 
+#断路器
 management:
   endpoints:
     web:
       exposure:
         include: 'hystrix.stream' #暴露hystrix监控端点
 
+#测试配置中心
+config:
+  info: local
