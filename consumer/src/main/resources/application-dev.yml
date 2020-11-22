@@ -13,7 +13,7 @@ spring:
       discovery:
         enabled: true #从配置中心读取文件
         serviceId: config-server #配置中心的serviceId，即服务名
-      name: application
+      name: config  #配置文件名称
       username: admin
       password: admin
 
@@ -38,6 +38,12 @@ management:
       exposure:
         include: 'hystrix.stream' #暴露hystrix监控端点
 
+logging:
+  level:
+    com.netflix.discovery: 'OFF'
+    org.springframework.cloud: 'DEBUG'
+
 #测试配置中心
 config:
   info: local
+

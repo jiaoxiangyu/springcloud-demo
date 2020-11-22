@@ -10,10 +10,10 @@ spring:
       label: master #配置仓库的分支
       server:
         git:
-          uri: https://github.com/jiaoxiangyu/spring-cloud-config.git #配置git仓库地址
-          searchPaths: '{application}' #配置仓库路径 从对应应用名称的子目录中搜索配置
-          username: #访问git仓库的用户名
-          password: #访问git仓库的用户密码
+          uri: https://github.com/jiaoxiangyu/springcloud-config.git #配置git仓库地址
+          search-paths: spring-cloud-config #配置仓库路径 从对应应用名称的子目录中搜索配置
+          username: jiaoxiangyu #访问git仓库的用户名
+          password: jxy1995824 #访问git仓库的用户密码
           clone-on-start: true #开启启动时直接从git获取配置
 
   #配置用户名和密码校验
@@ -29,5 +29,11 @@ eureka:
       defaultZone: http://admin:admin@10.0.10.51:8761/eureka/,http://admin:admin@10.0.10.52:8761/eureka/,http://admin:admin@10.0.10.53:8761/eureka/
   instance:
     perfer-ip-address: true #将自己IP注册到Eureka Server
+
+
+logging:
+  level:
+    com.netflix.discovery: 'OFF'
+    org.springframework.cloud: 'DEBUG'
 
 
