@@ -12,8 +12,8 @@ spring:
         git:
           uri: https://github.com/jiaoxiangyu/springcloud-config.git #配置git仓库地址
           search-paths: spring-cloud-config #配置仓库路径 从对应应用名称的子目录中搜索配置
-          username: jiaoxiangyu #访问git仓库的用户名
-          password: jxy1995824 #访问git仓库的用户密码
+          #username:  #访问git仓库的用户名
+          #password:  #访问git仓库的用户密码
           clone-on-start: true #开启启动时直接从git获取配置
 
   #配置用户名和密码校验
