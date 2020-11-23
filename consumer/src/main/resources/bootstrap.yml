@@ -1,11 +1,17 @@
+
 server:
   port: 8882
 
 spring:
   application:
-      name: cunsumer  # 用于指定注册到Eureka Server上的应用名称
+    name: cunsumer  # 用于指定注册到Eureka Server上的应用名称
 
-  #配置中心
+---
+#开发配置 --spring.profiles.active=dev
+spring:
+  profiles: dev
+
+#配置中心
   cloud:
     config:
       label: master #配置仓库的分支
@@ -43,7 +49,4 @@ logging:
     com.netflix.discovery: 'OFF'
     org.springframework.cloud: 'DEBUG'
 
-#测试配置中心
-config:
-  info: local
 
