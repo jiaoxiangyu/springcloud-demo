@@ -11,7 +11,7 @@ spring:
 spring:
   profiles: dev
 
-#配置中心
+  #配置中心
   cloud:
     config:
       label: master #配置仓库的分支
@@ -42,8 +42,9 @@ management:
   endpoints:
     web:
       exposure:
-        include: 'hystrix.stream' #暴露hystrix监控端点
+        include: hystrix.stream,refresh #暴露hystrix监控端点; refresh刷新端点
 
+#打印cloud debug日志
 logging:
   level:
     com.netflix.discovery: 'OFF'
