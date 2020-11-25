@@ -4,7 +4,7 @@ server:
 
 spring:
   application:
-    name: cunsumer  # 用于指定注册到Eureka Server上的应用名称
+    name: consumer  # 用于指定注册到Eureka Server上的应用名称
 
 ---
 #开发配置 --spring.profiles.active=dev

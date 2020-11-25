@@ -2,7 +2,7 @@ server:
   port: 8884
 spring:
   application:
-      name: cunsumer  # 用于指定注册到Eureka Server上的应用名称
+      name: consumer  # 用于指定注册到Eureka Server上的应用名称
 
 eureka:
   client:
