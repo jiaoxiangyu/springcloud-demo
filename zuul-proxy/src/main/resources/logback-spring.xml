@@ -2,9 +2,9 @@
 <configuration debug="false">
 
     <!--定义日志文件的存储地址 -->
-    <property name="logback.logDir" value="/Users/jiaoxiangyu/log/springcloud-demo/config-server" />
+    <property name="logback.logDir" value="/Users/jiaoxiangyu/log/springcloud-demo/zuul-proxy" />
     <!--定义应用名称 -->
-    <property name="logback.appName" value="config-server"/>
+    <property name="logback.appName" value="zuul-proxy"/>
 
     <!-- 控制台输出 -->
     <appender name="console" class="ch.qos.logback.core.ConsoleAppender">
