@@ -1,0 +1,35 @@
+server:
+  port: 8888
+spring:
+  application:
+      name: zuul-proxy  # 用于指定注册到Eureka Server上的应用名称
+
+#注册中心
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://admin:admin@10.0.10.51:8761/eureka/,http://admin:admin@10.0.10.52:8761/eureka/,http://admin:admin@10.0.10.53:8761/eureka/
+  instance:
+    perfer-ip-address: true #将自己IP注册到Eureka Server
+
+#路由
+zuul:
+  routes: #给服务配置路由
+    consumer: #消费者服务
+      path: /consumer/**
+    provider: #提供者服务
+      path: /provider/**
+  prefix: /proxy #给网关路由添加前缀
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: 'routes' #暴露路由端点，查看路由信息
+
+logging:
+  level:
+    com.netflix.discovery: 'OFF'
+    org.springframework.cloud: 'DEBUG'
+
+
