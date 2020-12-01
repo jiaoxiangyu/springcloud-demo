@@ -23,6 +23,12 @@ spring:
       username: admin
       password: admin
 
+  #rabbitmq相关配置
+  rabbitmq:
+    host: 10.0.10.52
+    port: 5672
+    username: guest
+    password: guest
 
 #注册中心
 eureka:
