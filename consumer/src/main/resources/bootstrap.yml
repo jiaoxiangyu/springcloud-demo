@@ -43,7 +43,7 @@ feign:
   hystrix:
     enabled: true #开启熔断器hystrix
 
-#断路器
+# curl -X POST http://localhost:8882/actuator/refresh
 management:
   endpoints:
     web:

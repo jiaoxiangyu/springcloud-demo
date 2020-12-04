@@ -40,6 +40,8 @@ eureka:
     perfer-ip-address: true #将自己IP注册到Eureka Server
 
 
+# curl -X POST http://localhost:8887/actuator/bus-refresh
+# 加安全验证 curl -X POST http://admin:admin@localhost:8887/actuator/bus-refresh
 management:
   endpoints:
     web:
