@@ -30,6 +30,13 @@ spring:
     username: admin
     password: admin
 
+  #请求链路跟踪
+  zipkin:
+    base-url: http://10.0.10.52:9411
+  sleuth:
+    sampler:
+      probability: 0.1 #设置Sleuth的抽样收集概率
+
 #注册中心
 eureka:
   client:

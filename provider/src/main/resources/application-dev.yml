@@ -4,6 +4,13 @@ spring:
   application:
       name: provider  # 用于指定注册到Eureka Server上的应用名称
 
+  #请求链路跟踪
+  zipkin:
+    base-url: http://10.0.10.52:9411
+  sleuth:
+    sampler:
+      probability: 0.1 #设置Sleuth的抽样收集概率
+
 eureka:
   client:
     serviceUrl:
@@ -11,3 +18,8 @@ eureka:
   instance:
     perfer-ip-address: true #将自己IP注册到Eureka Server
 
+#打印cloud debug日志
+logging:
+  level:
+    com.netflix.discovery: 'OFF'
+    org.springframework.cloud: 'DEBUG'
