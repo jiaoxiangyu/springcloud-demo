@@ -4,6 +4,13 @@ spring:
   application:
       name: consumer  # 用于指定注册到Eureka Server上的应用名称
 
+  #请求链路跟踪
+  zipkin:
+    base-url: http://10.0.10.52:9411
+  sleuth:
+    sampler:
+      probability: 0.1 #设置Sleuth的抽样收集概率
+
 eureka:
   client:
     serviceUrl:
