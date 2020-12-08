@@ -1,0 +1,23 @@
+server:
+  port: 8889
+spring:
+  application:
+      name: provider-consul  # 用于指定注册到Eureka Server上的应用名称
+
+  #Consul服务注册中心
+  cloud:
+    consul:
+      host: 10.0.10.52
+      port: 8500
+      discovery:
+        prefer-ip-address: true
+        service-name: ${spring.application.name}
+        tags: version=1.0
+        healthCheckInterval: 15s
+        health-check-url: http://${spring.cloud.client.ip-address}:${server.port}/actuator/health
+
+#打印cloud debug日志
+logging:
+  level:
+    com.netflix.discovery: 'OFF'
+    org.springframework.cloud: 'DEBUG'
