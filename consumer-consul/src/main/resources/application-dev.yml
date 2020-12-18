@@ -16,6 +16,11 @@ spring:
         healthCheckInterval: 15s
         health-check-url: http://${spring.cloud.client.ip-address}:${server.port}/actuator/health
 
+#远程调用
+feign:
+  hystrix:
+    enabled: true #开启熔断器hystrix
+
 #打印cloud debug日志
 logging:
   level:

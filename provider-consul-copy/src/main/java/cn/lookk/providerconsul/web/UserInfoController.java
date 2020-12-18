@@ -29,8 +29,8 @@ public class UserInfoController {
     public Result findById(@PathVariable Long id){
 
         UserInfo user = new UserInfo();
-        user.setId(1L);
-        user.setName("提供者-1");
+        user.setId(2L);
+        user.setName("提供者-2");
 
         logger.info("UserInfoController findById, id={}, user={}", id, user);
         return ResultUtil.success(user);
@@ -40,7 +40,7 @@ public class UserInfoController {
     public Result findByName(@PathVariable("name") String name){
 
         UserInfo user = new UserInfo();
-        user.setId(11L);
+        user.setId(22L);
         user.setName(name);
 
         logger.info("UserInfoController findByName, name={}, user={}", name, user);

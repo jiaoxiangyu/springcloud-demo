@@ -2,7 +2,7 @@
 <configuration debug="false">
 
     <!--定义日志文件的存储地址 -->
-    <property name="logback.logDir" value="/Users/jiaoxiangyu/log/springcloud-demo/provider-consul-copy" />
+    <property name="logback.logDir" value="~/log/springcloud-demo/provider-consul-copy" />
     <!--定义应用名称 -->
     <property name="logback.appName" value="provider-consul-copy"/>
 
