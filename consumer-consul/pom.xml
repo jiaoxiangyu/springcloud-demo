@@ -30,6 +30,12 @@
 			<artifactId>spring-cloud-starter-consul-discovery</artifactId>
 		</dependency>
 
+		<!--配置中心 consul-->
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-consul-config</artifactId>
+		</dependency>
+
 		<!--健康监控 actuator-->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>

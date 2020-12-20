@@ -26,12 +26,12 @@ public class ConfigController {
 
     private static final Logger logger = LoggerFactory.getLogger(ConfigController.class);
 
-    /*@Value("${config.info}")
+    @Value("${config.info}")
     private String configInfo;
 
     @GetMapping("/info")
     public Result findByName(){
         logger.info("configInfo={}", configInfo);
         return ResultUtil.success(configInfo);
-    }*/
+    }
 }
