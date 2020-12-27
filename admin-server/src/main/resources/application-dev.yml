@@ -5,13 +5,24 @@ spring:
   application:
     name: admin-server  # 用于指定注册到Eureka Server上的应用名称
 
+  #Consul服务注册中心
+  cloud:
+    consul:
+      host: 10.0.10.52
+      port: 8500
+      discovery:
+        prefer-ip-address: true
+        service-name: ${spring.application.name}
+        tags: version=1.0
+        healthCheckInterval: 15s
+        health-check-url: http://${spring.cloud.client.ip-address}:${server.port}/actuator/health
 
-# include 暴露端点 (不暴露时)
+
 management:
   endpoints:
     web:
       exposure:
         include: "*"
-    #  注释后 不显示 logfile 模块
-    logfile:
-      external-file: admin-log.log  #指向日志文件地址，需与LogBack配置的日志地址一致
+  endpoint:
+    health:
+      show-details: ALWAYS
