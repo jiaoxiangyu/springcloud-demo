@@ -1,4 +1,4 @@
-package cn.lookk.consumerconsul.web;
+package cn.lookk.admin.client.web;
 
 import cn.lookk.handleexception.util.ResultUtil;
 import cn.lookk.handleexception.vo.Result;

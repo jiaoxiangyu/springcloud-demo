@@ -8,9 +8,9 @@
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
 	<groupId>cn.lookk</groupId>
-	<artifactId>consumer-consul</artifactId>
+	<artifactId>admin-client</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>consumer-consul</name>
+	<name>admin-client</name>
 	<description>consumer Demo project for Spring Boot</description>
 
 	<properties>
@@ -30,16 +30,11 @@
 			<artifactId>spring-cloud-starter-consul-discovery</artifactId>
 		</dependency>
 
-		<!--配置中心 consul-->
+		<!--应用监控 admin-client -->
 		<dependency>
-			<groupId>org.springframework.cloud</groupId>
-			<artifactId>spring-cloud-starter-consul-config</artifactId>
-		</dependency>
-
-		<!--健康监控 actuator-->
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-actuator</artifactId>
+			<groupId>de.codecentric</groupId>
+			<artifactId>spring-boot-admin-starter-client</artifactId>
+			<version>2.0.3</version>
 		</dependency>
 
 		<!--实现声明式REST调用-Feign-->

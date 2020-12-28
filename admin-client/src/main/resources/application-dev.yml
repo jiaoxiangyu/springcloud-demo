@@ -1,0 +1,40 @@
+server:
+  port: 8893
+
+spring:
+  application:
+    name: admin-client  # 用于指定注册到Eureka Server上的应用名称
+  #配置admin-server地址
+  boot:
+    admin:
+      client:
+        url: http://localhost:8892
+
+  #Consul服务注册中心
+  cloud:
+    consul:
+      host: 10.0.10.52
+      port: 8500
+      discovery:
+        prefer-ip-address: true
+        service-name: ${spring.application.name}
+        tags: version=1.0
+        healthCheckInterval: 15s
+        health-check-url: http://${spring.cloud.client.ip-address}:${server.port}/actuator/health
+
+logging:
+  level:
+    com.netflix.discovery: 'OFF'
+    org.springframework.cloud: 'DEBUG'
+  file: admin-log.log #添加开启admin的日志监控
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+  endpoint:
+    health:
+      show-details: always
+
+

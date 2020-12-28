@@ -1,8 +1,9 @@
 server:
-  port: 8891
+  port: 8892
+
 spring:
   application:
-      name: consumer-consul  # 用于指定注册到Eureka Server上的应用名称
+    name: admin-server  # 用于指定注册到Eureka Server上的应用名称
 
   #Consul服务注册中心
   cloud:
@@ -16,13 +17,12 @@ spring:
         healthCheckInterval: 15s
         health-check-url: http://${spring.cloud.client.ip-address}:${server.port}/actuator/health
 
-#远程调用
-feign:
-  hystrix:
-    enabled: true #开启熔断器hystrix
 
-#打印cloud debug日志
-logging:
-  level:
-    com.netflix.discovery: 'OFF'
-    org.springframework.cloud: 'DEBUG'
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    health:
+      show-details: ALWAYS

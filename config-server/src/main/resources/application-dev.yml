@@ -4,7 +4,7 @@ spring:
 
   #用于指定注册到Eureka Server上的应用名称
   application:
-      name: config-server  # 用于指定注册到Eureka Server上的应用名称
+    name: config-server  # 用于指定注册到Eureka Server上的应用名称
 
   #配置中心
   cloud:

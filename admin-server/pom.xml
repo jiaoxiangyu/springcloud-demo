@@ -7,45 +7,29 @@
 		<artifactId>springcloud-demo</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
+
 	<groupId>cn.lookk</groupId>
-	<artifactId>consumer-consul</artifactId>
+	<artifactId>admin-server</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>consumer-consul</name>
-	<description>consumer Demo project for Spring Boot</description>
+	<name>admin-server</name>
+	<description>Demo project for Spring Boot</description>
 
 	<properties>
 		<java.version>1.8</java.version>
 	</properties>
 
 	<dependencies>
-		<!-- Spring MVC-->
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-web</artifactId>
-		</dependency>
-
 		<!--注册中心 consul-->
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-starter-consul-discovery</artifactId>
 		</dependency>
 
-		<!--配置中心 consul-->
+		<!--应用监控 admin-server -->
 		<dependency>
-			<groupId>org.springframework.cloud</groupId>
-			<artifactId>spring-cloud-starter-consul-config</artifactId>
-		</dependency>
-
-		<!--健康监控 actuator-->
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-actuator</artifactId>
-		</dependency>
-
-		<!--实现声明式REST调用-Feign-->
-		<dependency>
-			<groupId>org.springframework.cloud</groupId>
-			<artifactId>spring-cloud-starter-openfeign</artifactId>
+			<groupId>de.codecentric</groupId>
+			<artifactId>spring-boot-admin-starter-server</artifactId>
+			<version>2.0.3</version>
 		</dependency>
 
 	</dependencies>
