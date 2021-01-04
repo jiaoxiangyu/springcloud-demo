@@ -34,6 +34,7 @@
         <module>consumer-consul</module>
         <module>admin-server</module>
         <module>admin-client</module>
+        <module>oauth2-server</module>
     </modules>
 
     <dependencies>

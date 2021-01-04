@@ -2,9 +2,9 @@
 <configuration debug="false">
 
     <!--定义日志文件的存储地址 -->
-    <property name="logback.logDir" value="～/log/springcloud-demo/admin-server" />
+    <property name="logback.logDir" value="~/log/springcloud-demo/oauth2-server" />
     <!--定义应用名称 -->
-    <property name="logback.appName" value="admin-server"/>
+    <property name="logback.appName" value="oauth2-server"/>
 
     <!-- 控制台输出 -->
     <appender name="console" class="ch.qos.logback.core.ConsoleAppender">
